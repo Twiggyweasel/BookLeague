@@ -30,7 +30,15 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem "bullet", "~> 6.1" # help to kill N+1 queries and unused eager loading
+  gem "capybara", "~> 3.33" # Capybara is an integration testing tool for rack based web applications
+  gem 'faker'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  gem "rubocop", "~> 0.89.1", require: false # Automatic Ruby code style checking tool
+  gem "rubocop-performance", "~> 1.7", require: false # A collection of RuboCop cops to check for performance optimizations in Ruby code
+  gem "rubocop-rails", "~> 2.7", require: false # Automatic Rails code style checking tool
+  gem "rubocop-rspec", "~> 1.42", require: false # Code style checking for RSpec files
 end
 
 group :development do
@@ -40,6 +48,14 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do 
+  gem 'factory_bot_rails'
+  gem "shoulda-matchers", "~> 4.3.0", require: false # Simple one-liner tests for common Rails functionality
+  gem "simplecov", require: false # Code coverage with a powerful configuration library and automatic merging of coverage across test suites
+  gem "webdrivers"
+  gem 'database_cleaner-active_record'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
