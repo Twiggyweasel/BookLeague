@@ -22,8 +22,10 @@ gem 'redis', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'name_of_person' # Presenting names where a basic model of first and last name(s) combined is sufficient.
-gem 'noticed'
+gem 'noticed' # dead simple notifications
 gem 'stimulus_reflex'
+gem 'pagy' # Simple pagination
+gem "action_policy" # Access mangement library
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,6 +47,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem 'annotate'
 end
 
 group :test do 
