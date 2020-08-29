@@ -26,6 +26,8 @@ gem 'noticed' # dead simple notifications
 gem 'stimulus_reflex'
 gem 'pagy' # Simple pagination
 gem "action_policy" # Access mangement library
+gem 'devise'
+gem 'high_voltage', '~> 3.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
