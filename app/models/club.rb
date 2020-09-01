@@ -10,6 +10,10 @@
 #  updated_at  :datetime         not null
 #
 class Club < ApplicationRecord
+  # associations
+  has_many :memberships
+  has_many :users, through: :memberships
+
   # Validations
   validates :name, presence: true, uniqueness: {case_sensitive: false}, length: {maximum: 50}
   validates :founded, presence: true
