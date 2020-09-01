@@ -56,7 +56,7 @@ end
 
 group :test do 
   gem 'factory_bot_rails'
-  gem "shoulda-matchers", "~> 4.3.0", require: false # Simple one-liner tests for common Rails functionality
+  gem 'shoulda-matchers', '~> 4.0' # Simple one-liner tests for common Rails functionality
   gem "simplecov", require: false # Code coverage with a powerful configuration library and automatic merging of coverage across test suites
   gem "webdrivers"
   gem 'database_cleaner-active_record'
