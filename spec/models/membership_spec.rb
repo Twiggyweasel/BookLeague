@@ -27,6 +27,7 @@ RSpec.describe Membership, type: :model do
   describe "associations" do
     it { should belong_to(:user) } 
     it { should belong_to(:club) }
+    it { should define_enum_for(:role).with_values(%w[admin moderator member]) }
   end
   describe "validations" do
     it { should validate_presence_of(:role) }
