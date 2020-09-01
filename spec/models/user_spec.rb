@@ -18,15 +18,15 @@
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe User, type: :model do
   subject(:user) { create(:user) }
   describe "associations" do
-    it { should have_many(:memberships) } 
-    it { should have_many(:clubs).through(:memberships) } 
+    it { should have_many(:memberships) }
+    it { should have_many(:clubs).through(:memberships) }
   end
-  
+
   describe "validations" do
     it { should validate_presence_of(:first_name) }
     it { should validate_presence_of(:last_name) }

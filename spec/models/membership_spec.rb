@@ -19,13 +19,13 @@
 #  fk_rails_...  (club_id => clubs.id)
 #  fk_rails_...  (user_id => users.id)
 #
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Membership, type: :model do
   subject(:membership) { create(:membership) }
-  
+
   describe "associations" do
-    it { should belong_to(:user) } 
+    it { should belong_to(:user) }
     it { should belong_to(:club) }
     it { should define_enum_for(:role).with_values(%w[admin moderator member]) }
   end

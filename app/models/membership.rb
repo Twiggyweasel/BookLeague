@@ -20,8 +20,9 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Membership < ApplicationRecord
-  ROLE_TYPES = %w[admin moderator member]
-  enum role: ROLE_TYPES 
+  ROLE_TYPES = %w[admin moderator member].freeze
+  enum role: ROLE_TYPES
+
   belongs_to :user
   belongs_to :club
 
