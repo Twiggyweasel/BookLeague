@@ -22,6 +22,10 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   subject(:user) { create(:user) }
+  describe "associations" do
+    it { should have_many(:memberships) } 
+    it { should have_many(:clubs).through(:memberships) } 
+  end
   
   describe "validations" do
     it { should validate_presence_of(:first_name) }

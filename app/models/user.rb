@@ -25,6 +25,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_person_name
 
+  # associations
+  has_many :memberships
+  has_many :clubs, through: :memberships
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true
