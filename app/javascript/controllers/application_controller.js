@@ -37,6 +37,7 @@ export default class extends Controller {
 
   reflexSuccess (element, reflex, error) {
     // show success message etc...
+    console.log('hi');
   }
 
   reflexError (element, reflex, error) {
