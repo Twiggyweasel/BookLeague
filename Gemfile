@@ -38,6 +38,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem "rubocop", "~> 0.89.1", require: false # Automatic Ruby code style checking tool
   gem "rubocop-performance", "~> 1.7", require: false # A collection of RuboCop cops to check for performance optimizations in Ruby code
+  gem 'factory_bot_rails'
   gem "rubocop-rails", "~> 2.7", require: false # Automatic Rails code style checking tool
   gem "rubocop-rspec", "~> 1.42", require: false # Code style checking for RSpec files
 end
@@ -55,7 +56,6 @@ group :development do
 end
 
 group :test do 
-  gem 'factory_bot_rails'
   gem 'shoulda-matchers', '~> 4.0' # Simple one-liner tests for common Rails functionality
   gem "simplecov", require: false # Code coverage with a powerful configuration library and automatic merging of coverage across test suites
   gem "webdrivers"
