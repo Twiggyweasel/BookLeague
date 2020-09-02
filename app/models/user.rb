@@ -28,6 +28,8 @@ class User < ApplicationRecord
   # associations
   has_many :memberships
   has_many :clubs, through: :memberships
+  has_many :books
+  has_many :recommendations, through: :books
 
   validates :first_name, presence: true
   validates :last_name, presence: true

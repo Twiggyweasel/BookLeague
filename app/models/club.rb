@@ -13,6 +13,7 @@ class Club < ApplicationRecord
   # associations
   has_many :memberships
   has_many :users, through: :memberships
+  has_many :recommendations
 
   # Validations
   validates :name, presence: true, uniqueness: {case_sensitive: false}, length: {maximum: 50}

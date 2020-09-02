@@ -26,6 +26,7 @@ class Book < ApplicationRecord
   enum genre: GENRE_VALUES
   
   belongs_to :user
+  has_many :recommendations
 
   validates :title, presence: true, length: { in:  6..75 }
   validates :author, presence: true

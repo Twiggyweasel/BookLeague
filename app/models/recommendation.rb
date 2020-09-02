@@ -21,4 +21,6 @@
 class Recommendation < ApplicationRecord
   belongs_to :book
   belongs_to :club
+
+  has_one :user, through: :book
 end

@@ -16,6 +16,7 @@ RSpec.describe Club, type: :model do
   describe "Associations" do
     it { should have_many(:memberships) } 
     it { should have_many(:users).through(:memberships) } 
+    it { should have_many(:recommendations) } 
   end
   
   describe "Validations" do
