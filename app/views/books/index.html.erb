@@ -1,2 +1,12 @@
 <h1>Books#index</h1>
 <p>Find me in app/views/books/index.html.erb</p>
+
+<% if @books.any? %>
+  <ul>
+    <% @books.each do |book| %>
+      <li><%= book.title %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>User has no books</p>
+<% end %>
