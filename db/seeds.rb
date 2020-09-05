@@ -7,3 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(email: "test@test.com", first_name: 'Richard', last_name: 'Wise', password: 'test123')
+
+15.times do 
+  page_count = rand(50..5000) 
+
+  Book.create(title: Faker::Book.title, author: Faker::Book.author, description: Faker::Lorem.paragraphs, page_count: page_count, published: Faker::Date.backward, genre: 1, user_id: 1)
+end
