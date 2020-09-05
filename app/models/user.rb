@@ -35,14 +35,14 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
 
-  def is_club_member(club)
+  def club_member?(club)
     return false unless memberships.exists?(club_id: club.id)
-    
+
     true
   end
 
   def club_role(club)
-    return 'non-member' unless is_club_member(club)
+    return "non-member" unless is_club_member(club)
 
     memberships.where(club_id: club.id).first.role
   end

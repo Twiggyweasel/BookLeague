@@ -22,13 +22,13 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Book < ApplicationRecord
-  GENRE_VALUES = %w[Fantasy Horror Mystery SciFi Thriller]
+  GENRE_VALUES = %w[Fantasy Horror Mystery SciFi Thriller].freeze
   enum genre: GENRE_VALUES
-  
+
   belongs_to :user
   has_many :recommendations
 
-  validates :title, presence: true, length: { in:  6..75 }
+  validates :title, presence: true, length: {in: 6..75}
   validates :author, presence: true
   validates :description, presence: true
   validates :genre, presence: true
