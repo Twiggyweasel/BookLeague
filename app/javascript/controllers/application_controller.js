@@ -1,6 +1,7 @@
 import { Controller } from 'stimulus'
 import StimulusReflex from 'stimulus_reflex'
-
+import debounced from 'debounced'
+debounced.initialize()
 /* This is your application's ApplicationController.
  * All StimulusReflex controllers should inherit from this class.
  *
@@ -37,7 +38,6 @@ export default class extends Controller {
 
   reflexSuccess (element, reflex, error) {
     // show success message etc...
-    console.log('hi');
   }
 
   reflexError (element, reflex, error) {

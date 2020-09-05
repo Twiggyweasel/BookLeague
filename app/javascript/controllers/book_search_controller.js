@@ -9,6 +9,7 @@ export default class extends ApplicationController {
   }
 
   perform (event) {
+    console.log("test");
     event.preventDefault()
     this.stimulate('BookSearchReflex#perform', this.queryTarget.value)
   }
