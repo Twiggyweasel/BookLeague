@@ -26,5 +26,9 @@ class Membership < ApplicationRecord
   belongs_to :user
   belongs_to :club
 
+  scope :admins, -> { where(role: 0) }
+  scope :moderators, -> { where(role: 1) }
+  scope :members,  -> { where(role: 2) }
+
   validates :role, presence: true
 end
