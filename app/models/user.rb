@@ -42,7 +42,7 @@ class User < ApplicationRecord
   end
 
   def club_role(club)
-    return "non-member" unless is_club_member(club)
+    return "non-member" unless club_member?(club)
 
     memberships.where(club_id: club.id).first.role
   end

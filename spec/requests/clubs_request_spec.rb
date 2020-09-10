@@ -1,52 +1,34 @@
 require 'rails_helper'
 
 RSpec.describe "Clubs", type: :request do
+  subject(:club) { create(:club) }
 
-  describe "GET /index," do
+  describe "GET /index" do
     it "returns http success" do
-      get "/clubs/index,"
+      get "/clubs"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /show," do
+  describe "GET /show" do
     it "returns http success" do
-      get "/clubs/show,"
+      get "/clubs/#{subject.id}"
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /new," do
     it "returns http success" do
-      get "/clubs/new,"
+      get "/clubs/new"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /create," do
-    it "returns http success" do
-      get "/clubs/create,"
-      expect(response).to have_http_status(:success)
-    end
-  end
 
-  describe "GET /edit," do
-    it "returns http success" do
-      get "/clubs/edit,"
-      expect(response).to have_http_status(:success)
-    end
-  end
 
-  describe "GET /update," do
+  describe "GET /edit" do
     it "returns http success" do
-      get "/clubs/update,"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /destroy" do
-    it "returns http success" do
-      get "/clubs/destroy"
+      get "/clubs/#{subject.id}/edit"
       expect(response).to have_http_status(:success)
     end
   end

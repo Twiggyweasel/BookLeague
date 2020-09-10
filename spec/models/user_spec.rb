@@ -35,15 +35,15 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:email) }
   end
 
-  describe "#is_club_member" do
+  describe "#club_member?" do
     it "should return true if user is member of requested club" do
       club = create(:club)
       Membership.create(role: 0, club_id: club.id, user_id: subject.id)
-      expect(subject.is_club_member(club)).to be true 
+      expect(subject.club_member?(club)).to be true 
     end
     it "should return false if the user is not member of requested club" do
       club = create(:club)
-      expect(subject.is_club_member(club)).to be false       
+      expect(subject.club_member?(club)).to be false       
     end
   end
 

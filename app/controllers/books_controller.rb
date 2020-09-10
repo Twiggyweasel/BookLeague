@@ -1,9 +1,10 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_book, only: %w[show edit update destroy]
 
   def index
-    @books = current_user.books
+    # TODO: add back current_user filter
+    @books = Book.all
   end
 
   def show; end

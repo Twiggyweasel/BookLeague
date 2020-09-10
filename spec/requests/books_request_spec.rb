@@ -1,17 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe "Books", type: :request do
-
+  subject(:book) { create(:book) }
+  
   describe "GET /index" do
     it "returns http success" do
-      get "/books/index"
+      get "/books"
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /show" do
     it "returns http success" do
-      get "/books/show"
+      get "/books/#{subject.id}"
       expect(response).to have_http_status(:success)
     end
   end
@@ -23,32 +24,10 @@ RSpec.describe "Books", type: :request do
     end
   end
 
-  describe "GET /create" do
-    it "returns http success" do
-      get "/books/create"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
   describe "GET /edit" do
     it "returns http success" do
-      get "/books/edit"
+      get "/books/#{subject.id}/edit"
       expect(response).to have_http_status(:success)
     end
   end
-
-  describe "GET /update" do
-    it "returns http success" do
-      get "/books/update"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /destroy" do
-    it "returns http success" do
-      get "/books/destroy"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
 end
