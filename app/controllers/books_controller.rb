@@ -51,6 +51,10 @@ class BooksController < ApplicationController
   def search; end
   
   private
+    def set_user
+      @current_user = current_user
+    end
+    
     def set_book
       @book = Book.find(params[:id])
     end
