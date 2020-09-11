@@ -3,7 +3,7 @@ class ClubsController < ApplicationController
 
   def index
     # TODO: add pagination
-    @clubs = Club.all
+    @clubs = Club.public_clubs
   end
 
   def show; end

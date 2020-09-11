@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2020_09_02_015749) do
     t.string "name"
     t.date "founded"
     t.text "description"
+    t.string "invite_code"
+    t.boolean "is_private", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

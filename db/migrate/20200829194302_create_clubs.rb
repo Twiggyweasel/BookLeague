@@ -4,6 +4,8 @@ class CreateClubs < ActiveRecord::Migration[6.0]
       t.string :name
       t.date :founded
       t.text :description
+      t.string :invite_code
+      t.boolean :is_private, default: false
 
       t.timestamps
     end
