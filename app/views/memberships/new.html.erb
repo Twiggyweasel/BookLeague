@@ -1,0 +1,32 @@
+<h1>Join <%= @club.name %></h1>
+<p>You are about to join the club, this will allow you to make recommendations, see meeting dates, and start converstations.</p>
+
+<%= form_for [@club, @membership], remote: false do |f| %>
+  <div class="field">
+    <%= f.hidden_field :role, value: "member" %>
+    <%= f.hidden_field :user_id, value: 1 %>
+    <%= f.hidden_field :club_id, value: @club.id %>
+    <%= f.submit("Join Club") %>
+    <%= link_to("Cancel", clubs_path) %>
+  </div>
+    
+<% end %>
+
+<div style='width: 3rem; height: 3rem; border-radius: 100%;'>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" class="avatar" aria-hidden="true">
+      <defs>
+        <clipPath id="porthole">
+          <circle cx="50%" cy="50%" r="50%"/>
+        </clipPath>
+      </defs>
+
+      <g>
+        <rect width="100%" height="100%" rx="250" fill="#F95C5C"/>
+
+        <text x="50%" y="50%" fill="#000000" text-anchor="middle" dy="0.35em" textLength="80%" lengthAdjust="spacingAndGlyphs" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="230" font-weight="800" letter-spacing="-5">
+          <%= User.first.name.initials %>
+        </text>
+      </g>
+    </svg>
+
+</div>

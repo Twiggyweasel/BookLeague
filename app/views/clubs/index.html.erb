@@ -1,2 +1,7 @@
 <h1>Clubs#index,</h1>
-<p>Find me in app/views/clubs/index,.html.erb</p>
+<ul>
+  <%- @clubs.each do |c| %>
+    <li><%= c.name %> - <%= link_to "Join Club", new_club_membership_path(c) %>
+  <% end %>
+</ul>
+
