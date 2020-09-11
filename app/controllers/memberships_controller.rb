@@ -3,14 +3,14 @@ class MembershipsController < ApplicationController
   before_action :set_club
 
   def index
-    if params[:club_id]
-      @memberships = @club.memberships
-    else
-      # TDOO: update query to be run off of current user
-      @memberships = User.first.memberships
-    end
+    @memberships = if params[:club_id]
+                     @club.memberships
+                   else
+                     # TDOO: update query to be run off of current user
+                     User.first.memberships
+                   end
   end
-  
+
   def show; end
 
   def new
@@ -52,9 +52,8 @@ class MembershipsController < ApplicationController
     # TODO: clean up set_club to account for #user and #club routes
     @club = Club.find(params[:club_id]) if params[:club_id]
   end
-  
+
   def membership_params
     params.require(:membership).permit(:role, :user_id, :club_id)
   end
 end
-
