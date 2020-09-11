@@ -23,4 +23,6 @@ class Recommendation < ApplicationRecord
   belongs_to :club
 
   has_one :user, through: :book
+
+  validates :book_id, :uniqueness => {:scope => :club_id}
 end

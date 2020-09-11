@@ -9,10 +9,10 @@ module Clubs
 
     def create
       @recommendation = Recommendation.create(recommendation_params)
-
+      
       respond_to do |format|
         if @recommendation.save
-          format.html { redirect_to @recommendation, notice: "Recommendation was successfully created." }
+          format.html { redirect_to [@club, @recommendation], notice: "Recommendation was successfully created." }
           format.json { render :show, status: :created, location: @recommendation }
         else
           format.html { render :new }

@@ -7,6 +7,7 @@ module Recommendable
 
   def new
     @recommendation = Recommendation.new
+    @book = @recommendation.build_book
   end
 
   def show; end

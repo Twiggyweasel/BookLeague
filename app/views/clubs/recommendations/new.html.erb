@@ -1,2 +1,14 @@
 <h1>Recommendations#new</h1>
 <p>Find me in app/views/recommendations/new.html.erb</p>
+
+<%= form_for [@club, @recommendation], remote: false do |f| %>
+  <%= f.hidden_field :club_id, value: @club.id %>
+  <div class="field">
+    <%= f.label :book_id, "Book" %>
+    <%= f.select :book_id, options_for_select(Book.all.collect { |b| [b.title, b.id]}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+    <%= link_to "cancel", club_recommendations_path(@club) %>
+  </div>  
+<% end %>
