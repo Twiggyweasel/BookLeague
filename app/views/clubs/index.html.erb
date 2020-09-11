@@ -1,7 +1,11 @@
-<h1>Clubs#index,</h1>
-<ul>
+<h1>Public Clubs</h1>
+
+<div id='clubs_container' class='container'>
   <%- @clubs.each do |c| %>
-    <li><%= c.name %> - <%= link_to "Join Club", new_club_membership_path(c) %>
+    <div id="<%= dom_id(c)%>" class="<%= dom_class(c) %>">
+      <h2><%= c.name %></h2>
+      <%= link_to "Join Club", new_club_membership_path(c), class: dom_class(c, :join) %>
+    </div>
   <% end %>
-</ul>
+
 
