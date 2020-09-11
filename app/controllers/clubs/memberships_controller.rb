@@ -4,7 +4,8 @@ module Clubs
     before_action :set_club
 
     def index
-      @memberships = @club.memberships
+      @memberships = Membership.includes([:user]).where(club: @club)
+      # @memberships = @club.memberships
     end
 
     def show; end

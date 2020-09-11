@@ -33,3 +33,7 @@ end
 
   Book.create(title: Faker::Book.title, author: Faker::Book.author, description: Faker::Lorem.paragraphs, page_count: page_count, published: Faker::Date.backward, genre: 1, user_id: 1)
 end
+
+Book.all.each do |b|
+  Recommendation.create(club_id: 1, book_id: b.id)
+end

@@ -4,7 +4,7 @@ module Clubs
     include Recommendable
 
     def index
-      @recommendations = @club.recommendations
+      @recommendations = Recommendation.includes([:book]).where(club: @club)
     end
 
     def create
