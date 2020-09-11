@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_02_015749) do
+ActiveRecord::Schema.define(version: 2020_09_11_164749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 2020_09_02_015749) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "meetings", force: :cascade do |t|
+    t.datetime "date"
+    t.bigint "club_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["club_id"], name: "index_meetings_on_club_id"
+  end
+
   create_table "memberships", force: :cascade do |t|
     t.integer "role"
     t.bigint "user_id", null: false
@@ -57,6 +65,15 @@ ActiveRecord::Schema.define(version: 2020_09_02_015749) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient_type_and_recipient_id"
+  end
+
+  create_table "reads", force: :cascade do |t|
+    t.bigint "book_id", null: false
+    t.bigint "meeting_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_reads_on_book_id"
+    t.index ["meeting_id"], name: "index_reads_on_meeting_id"
   end
 
   create_table "recommendations", force: :cascade do |t|
@@ -83,8 +100,11 @@ ActiveRecord::Schema.define(version: 2020_09_02_015749) do
   end
 
   add_foreign_key "books", "users"
+  add_foreign_key "meetings", "clubs"
   add_foreign_key "memberships", "clubs"
   add_foreign_key "memberships", "users"
+  add_foreign_key "reads", "books"
+  add_foreign_key "reads", "meetings"
   add_foreign_key "recommendations", "books"
   add_foreign_key "recommendations", "clubs"
 end

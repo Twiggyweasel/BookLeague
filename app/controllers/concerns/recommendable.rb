@@ -2,7 +2,7 @@ module Recommendable
   extend ActiveSupport::Concern
 
   included do
-    before_action :set_recommendation, only: [:show, :edit, :destroy, :update]
+    before_action :set_recommendation, only: %i[show edit destroy update]
   end
 
   def new

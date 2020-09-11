@@ -15,8 +15,8 @@
 #
 #  index_notifications_on_recipient_type_and_recipient_id  (recipient_type,recipient_id)
 #
-require "rails_helper"
+# require "rails_helper"
 
-RSpec.describe Notification, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+# RSpec.describe Notification, type: :model do
+#   pending "add some examples to (or delete) #{__FILE__}"
+# end

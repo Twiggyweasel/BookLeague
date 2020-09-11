@@ -27,6 +27,7 @@ RSpec.describe User, type: :model do
     it { should have_many(:clubs).through(:memberships) }
     it { should have_many(:books) } 
     it { should have_many(:recommendations).through(:books) }
+    it { should have_many(:meetings).through(:clubs) } 
   end
 
   describe "validations" do

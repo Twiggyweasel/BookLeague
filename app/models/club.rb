@@ -16,6 +16,7 @@ class Club < ApplicationRecord
   has_many :memberships
   has_many :users, through: :memberships
   has_many :recommendations
+  has_many :meetings
 
   # Validations
   validates :name, presence: true, uniqueness: {case_sensitive: false}, length: {maximum: 50}

@@ -27,6 +27,7 @@ class Book < ApplicationRecord
 
   belongs_to :user
   has_many :recommendations
+  has_many :reads
 
   validates :title, presence: true, length: {in: 6..75}
   validates :author, presence: true

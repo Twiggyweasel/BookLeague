@@ -9,7 +9,7 @@ module Clubs
 
     def create
       @recommendation = Recommendation.create(recommendation_params)
-      
+
       respond_to do |format|
         if @recommendation.save
           format.html { redirect_to [@club, @recommendation], notice: "Recommendation was successfully created." }
@@ -44,7 +44,7 @@ module Clubs
 
     private
 
-    def set_club 
+    def set_club
       @club = Club.find(params[:club_id])
     end
   end

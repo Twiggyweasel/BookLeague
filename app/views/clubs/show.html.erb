@@ -1,2 +1,11 @@
-<h1>Clubs#show,</h1>
-<p>Find me in app/views/clubs/show,.html.erb</p>
+<h1><%= @club.name %></h1>
+<h3>Description</h3>
+<p>
+  <%= @club.description %>
+</p>
+<h3>Links</h3>
+<ul>
+  <li><%= link_to  "recommendations", [@club, :recommendations] %></li>
+  <li><%= link_to  "members", [@club, :memberships] %></li>
+  <li><%= link_to  "meetings", [@club, :meetings] %></li>
+</ul>

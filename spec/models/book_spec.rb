@@ -29,6 +29,7 @@ RSpec.describe Book, type: :model do
   describe "associations" do
     it { should belong_to(:user) } 
     it { should have_many(:recommendations) } 
+    it { should have_many(:reads) }
     it { should define_enum_for(:genre).with_values(%w[Fantasy Horror Mystery SciFi Thriller]) }
   end
   
