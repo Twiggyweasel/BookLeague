@@ -1,4 +1,4 @@
-module Club
+module Clubs
   module MeetingsHelper
   end
 end

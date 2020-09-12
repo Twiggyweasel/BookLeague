@@ -1,10 +1,10 @@
 class BooksController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_book, only: %w[show edit update destroy]
 
   def index
     # TODO: add back current_user filter
-    @books = Book.all
+    @books = Book.where(user_id: current_user.id)
   end
 
   def show; end
@@ -48,8 +48,6 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def search; end
 
   private
 

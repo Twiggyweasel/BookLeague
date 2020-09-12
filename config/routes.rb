@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+  get 'book_search', to: 'book_search#new'
 
 
 
