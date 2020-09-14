@@ -13,18 +13,36 @@
  *= require_tree .
  *= require_self
  */
+:root {
+  --font-black: #0A0605;
+  --font-grey: #B4ACA1;
+
+  --light-background-color: #EAE8DE;
+  --color-accent-orange: #df5517;
+  --color-accent-gold:#DFB917;
+  --color-accent-aqua: #DEF8EF;
+  --color-accent-blue: #17A1DF;
+  --color-accent-teal: #17DFB9;
+}
+ 
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--light-background-color);
+  color: var(--font-black);
+}
+
+.container {
+  margin: 15px 45px;
 }
 
 nav {
   width: 100%;
   height: 66px;
-  background-color: bisque;
+  background-color: transparent;
 }
 
 .nav--container {
@@ -39,7 +57,57 @@ nav {
   font-size: 2rem;
   padding: 1.5rem 1rem;
 }
+.nav--logo::before {
+  content: '';
+  display: inline-block;
+  height: .5rem;
+  width: .5rem;
+  margin-right: .25rem;
+  border-radius: 100%;
+  background-color: var(--color-accent-orange);
+}
+
+.nav--logo::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  height: .5rem;
+  width: .5rem;
+  margin-left: .25rem;
+  border-radius: 100%;
+  background-color: var(--color-accent-blue);
+
+
+}
 
 .nav--actions {
   padding: 1.5rem 1.5rem;
+}
+
+.box {
+  height: 100px;
+  width: 100%;
+  background-color: var(--color-accent-blue);
+}
+
+.btn {
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: .5rem;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+.btn.btn-blue {
+  background-color: var(--color-accent-blue);
+  border-color: #a2d9f2;
+  color: white;
+}
+
+.btn.btn-orange {
+  background-color: var(--color-accent-orange);
+  border-color: #f2bba2;
+  color: white;
 }
