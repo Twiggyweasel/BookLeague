@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+
 :root {
   --font-black: #0A0605;
   --font-grey: #B4ACA1;
@@ -23,6 +25,7 @@
   --color-accent-aqua: #DEF8EF;
   --color-accent-blue: #17A1DF;
   --color-accent-teal: #17DFB9;
+  --color-accent-purple: #8954f1;
 }
  
 * {
@@ -45,6 +48,7 @@ nav {
   background-color: transparent;
 }
 
+
 .nav--container {
   padding: 0 2rem;
   max-width: 80rem;
@@ -56,6 +60,7 @@ nav {
 .nav--logo {
   font-size: 2rem;
   padding: 1.5rem 1rem;
+  
 }
 .nav--logo::before {
   content: '';
@@ -109,5 +114,12 @@ a.btn {
 .btn.btn-orange {
   background-color: var(--color-accent-orange);
   border-color: #f2bba2;
+  color: white;
+}
+
+.hero {
+  background: rgb(223,85,23); 
+  background: linear-gradient(90deg, rgba(223,85,23,1) 0%, rgba(137,84,241,1) 66%, rgba(23,161,223,1) 100%); 
+  height: calc(100vh - 66px);
   color: white;
 }
