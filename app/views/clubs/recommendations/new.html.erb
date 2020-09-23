@@ -5,7 +5,8 @@
   <%= f.hidden_field :club_id, value: @club.id %>
   <div class="field">
     <%= f.label :book_id, "Book" %>
-    <%= f.select :book_id, options_for_select(Book.all.collect { |b| [b.title, b.id]}) %>
+    <%= f.select :book_id, options_for_select(current_user.books.all.collect { |b| [b.title, b.id]}) %>
+    <span>Need to add a book? <%= link_to 'Search', :book_search %> or <%= link_to 'add manually', [:new, :book] %></span>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -3,9 +3,8 @@ Rails.application.routes.draw do
     get 'meetings/index'
   end
   devise_for :users
-  resources :books do
-    get "search", to: "books#search"
-  end
+  resources :books
+  
   resources :clubs do
     scope module: :clubs do
       resources :memberships
@@ -22,7 +21,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'book_search', to: 'book_search#new'
+  get 'book_search', to: 'book_search#show'
 
 
 
